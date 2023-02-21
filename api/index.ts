@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import cors from "cors";
+import cors, { CorsOptions } from "cors";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
 import notesRouter from "./routes/notes";
@@ -11,14 +11,13 @@ const DB_URL = process.env.DB_URL;
 // CONFIGURATIONS
 const app = express();
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true, //access-control-allow-credentials:true
+  })
+);
 app.use(express.json());
-
-// {
-//     origin: "http://localhost:3000",
-//     credentials: true, //access-control-allow-credentials:true
-//     optionSuccessStatus: 200,
-//   }
 
 // Routes
 app.use("/api/notes", notesRouter);

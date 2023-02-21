@@ -1,4 +1,4 @@
-import axios from "axios";
+import { publicRequest } from "../requestMethodes";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
@@ -34,7 +34,7 @@ const SignUpModal = ({ setShowSignInModal, setShowSignUpModal }: PropsType) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("/auth/register", formInput);
+      const res = await publicRequest.post("/auth/register", formInput);
       dispatch(setUser(res.data));
       setShowSignUpModal(false);
     } catch (error) {

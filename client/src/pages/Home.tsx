@@ -1,4 +1,4 @@
-import axios from "axios";
+import { publicRequest } from "../requestMethodes";
 import { useState, useEffect } from "react";
 import AddEditNoteModal from "../components/AddEditNoteModal";
 import Notes from "../components/Notes";
@@ -19,7 +19,7 @@ const Home = () => {
     const getNotes = async () => {
       try {
         setLoadingNotes(true);
-        const res = await axios.get(`/notes/${user._id}`);
+        const res = await publicRequest.get(`/notes/${user._id}`);
         setNotes(res.data);
       } catch (error) {
         console.log(error);

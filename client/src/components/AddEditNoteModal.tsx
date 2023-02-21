@@ -1,4 +1,4 @@
-import axios from "axios";
+import { publicRequest } from "../requestMethodes";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Note as NoteModel } from "../models/note";
@@ -47,13 +47,13 @@ const AddEditNoteModal = ({
     try {
       setLoading(true);
       if (editedNote) {
-        const res = await axios.put(
+        const res = await publicRequest.put(
           `/notes/${user._id}?noteId=${editedNote._id}`,
           formInput
         );
         setNotes(notes.map(n => (n._id === editedNote._id ? res.data : n)));
       } else {
-        const res = await axios.post(`/notes/${user._id}`, formInput);
+        const res = await publicRequest.post(`/notes/${user._id}`, formInput);
         setNotes([res.data, ...notes]);
       }
     } catch (error) {

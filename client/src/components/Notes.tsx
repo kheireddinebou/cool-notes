@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { Note as NoteModel } from "../models/note";
 import { UserState } from "../redux/userSlice";
+import { publicRequest } from "../requestMethodes";
 import Note from "./Note";
 
 interface NotesProps {
@@ -15,7 +15,7 @@ const Notes = ({ notes, setNotes, setEditedNote }: NotesProps) => {
 
   const deleteNote = async (note: NoteModel) => {
     try {
-      axios.delete(`/notes/${user._id}?noteId=${note._id}`);
+      publicRequest.delete(`/notes/${user._id}?noteId=${note._id}`);
       setNotes(notes.filter(n => n._id !== note._id));
     } catch (error) {
       console.error(error);

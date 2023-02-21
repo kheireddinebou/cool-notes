@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
+import { publicRequest } from "../requestMethodes";
 
 interface PropsType {
   setShowSignInModal: (s: boolean) => void;
@@ -32,7 +32,7 @@ const SignInModal = ({ setShowSignInModal, setShowSignUpModal }: PropsType) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("/auth/login", formInput);
+      const res = await publicRequest.post("/auth/login", formInput);
       dispatch(setUser(res.data));
       setShowSignInModal(false);
     } catch (error) {
