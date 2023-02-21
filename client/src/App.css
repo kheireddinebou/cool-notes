@@ -77,6 +77,13 @@
   }
 }
 
+
+@media screen and (max-width: 800px) {
+  .welcome-text {
+    font-size: 5.5rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .welcome-text {
     font-size: 5rem;
