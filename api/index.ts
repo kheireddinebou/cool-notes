@@ -15,6 +15,7 @@ app.use(
   cors({
     origin: "https://notes-upg8.onrender.com",
     credentials: true, //access-control-allow-credentials:true
+    allowedHeaders: "access_token",
   })
 );
 app.use(express.json());
