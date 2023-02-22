@@ -13,7 +13,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://notes-upg8.onrender.com",
     credentials: true, //access-control-allow-credentials:true
   })
 );
