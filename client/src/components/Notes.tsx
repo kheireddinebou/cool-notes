@@ -23,7 +23,7 @@ const Notes = ({ notes, setNotes, setEditedNote }: NotesProps) => {
   };
 
   return (
-    <div className="row w-100">
+    <div className="row g-3 w-100">
       {notes?.map(note => (
         <div className="col-md-4">
           <div onClick={() => setEditedNote(note)}>

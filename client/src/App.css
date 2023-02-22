@@ -65,28 +65,36 @@
   align-items: center;
 }
 
-.welcome-text {
+.welcome-title {
   font-weight: 600;
   font-size: 8rem;
   line-height: 1.1;
 }
 
+.welcome-subtitle {
+  font-size: 1.7rem;
+}
+
 @media screen and (max-width: 1200px) {
-  .welcome-text {
+  .welcome-title {
     font-size: 6.5rem;
   }
 }
 
 
 @media screen and (max-width: 800px) {
-  .welcome-text {
+  .welcome-title {
     font-size: 5.5rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .welcome-text {
-    font-size: 5rem;
+  .welcome-title {
+    font-size: 3.5rem;
   }
 }
 
