@@ -15,7 +15,7 @@ export const signUp: RequestHandler<
   unknown,
   SignUpBody,
   unknown
-> =  async (req, res) => {
+> = async (req, res) => {
   try {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -45,6 +45,8 @@ export const signUp: RequestHandler<
     res
       .cookie("access_token", token, {
         httpOnly: true,
+        sameSite: "none",
+        secure: true,
       })
       .status(201)
       .json(others);
@@ -94,6 +96,8 @@ export const signIn: RequestHandler<
     res
       .cookie("access_token", token, {
         httpOnly: true,
+        sameSite: "none",
+        secure: true,
       })
       .status(200)
       .json(others);
