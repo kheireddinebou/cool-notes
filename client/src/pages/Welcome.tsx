@@ -17,7 +17,7 @@ const Welcome = () => {
             </div>
 
             <div className="col-lg-6 mt-4 mt-lg-0">
-              <span className="text-light text-wrap text-capitalizewelcome-subtitle">
+              <span className="text-light text-wrap text-capitalize welcome-subtitle">
                 Are you tired of constantly forgetting important information or
                 misplacing important notes?
                 <div className="my-md-3" /> Our notes app is here to help! With
